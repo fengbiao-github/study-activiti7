@@ -10,6 +10,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 		<property name="jdbcUsername" value="root"></property>
 		<property name="jdbcPassword" value="123456"></property>
 		<!-- 数据库生成策略 -->
+<!-- 		<property name="databaseSchemaUpdate" value="drop-create"></property> -->
 		<property name="databaseSchemaUpdate" value="true"></property>
 	</bean>
 </beans>
