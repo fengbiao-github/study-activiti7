@@ -1,0 +1,17 @@
+server:
+  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/activiti7?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  activiti:
+    database-schema-update: true # 创建工作流数据库表
+    db-history-used: true # activiti7 默认不生成历史信息表，开启历史表
+    history-level: full # 记录历史等级 可配置的历史级别有none, activity, audit, full
+    check-process-definitions: false # 是否自动检查 resources 下的 processes 目录中的流程文件
+    deployment-mode: never-fail # 每次启动项目，默认会向 act_re_deployment 表插入一条 SpringAutoDeployment 数据，指定never-fail 可关闭插入
+logging:
+  level:
+    '[org.activiti.engine.impl.persistence.entity]': debug
